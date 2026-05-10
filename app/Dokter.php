@@ -8,7 +8,7 @@ class Dokter extends Model
 {
     protected $table = 'dokter';
     protected $primaryKey = 'id';
-    protected $fillable = ['name_dokter', 'spesialis_id', 'no_hp'];
+    protected $fillable = ['name', 'spesialis_id', 'no_hp'];
 
     public function dokter()
     {
