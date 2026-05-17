@@ -5,7 +5,7 @@
             <th>No</th>
             <th>Nama</th>
             <th>Spesialis</th>
-            <th>Nomor telp</th>
+            <th>Nomor Telp</th>
             <th>
                 <a href="{{ route('dokter.create') }}">+ Create Dokter</a>
             </th>

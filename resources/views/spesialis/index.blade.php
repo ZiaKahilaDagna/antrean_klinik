@@ -1,4 +1,4 @@
-<h3>halaman index</h3>
+<h3>halaman index spesialis</h3>
 <table border="1">
     <thead>
         <tr>

@@ -39,7 +39,7 @@ class PasienController extends Controller
         $request->validate([
             'name' => 'required|string',
             'address' => 'nullable|string',
-            'email' => 'nullable|string|unique:pasien,email,' .$id,
+            'email' => 'nullable|string|unique:pasien,email,' . $id,
             'no_hp' => 'required|string|max:15',
             'jenis_kelamin' => 'required|in:L,P'
         ]);
@@ -90,7 +90,7 @@ class PasienController extends Controller
         $request->validate([
             'name' => 'required|string',
             'address' => 'nullable|string',
-            'email' => 'nullable|string|unique:pasien,email,' .$id,
+            'email' => 'nullable|string|unique:pasien,email,' . $id, 
             'no_hp' => 'required|string|max:15',
             'jenis_kelamin' => 'required|in:L,P'
         ]);

@@ -8,7 +8,7 @@
     <select name="spesialis_id">
         <option value="">-- Pilih Spesialis --</option>
         @foreach ($spesialis as $spesialis)
-        <option value="{{ $spesialis->spesialis_id }}">
+        <option value="{{ $spesialis->id }}">
             {{ $spesialis->name }}
         </option>
         @endforeach

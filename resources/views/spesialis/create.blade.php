@@ -1,4 +1,4 @@
-<h3>halaman create</h3>
+<h3>halaman create spesialis</h3>
 <form action="{{ route('spesialis.store') }}" method="POST">
     {{ csrf_field() }}
     <label>Nama:</label>
