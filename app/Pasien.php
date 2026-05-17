@@ -10,8 +10,8 @@ class Pasien extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'address', 'email', 'no_hp', 'jenis_kelamin'];
 
-    public function pasien()
+    public function antrian()
     {
-        return $this->hasMany(Pasien::class, 'id');
+        return $this->hasMany(Antrian::class, 'pasien_id');
     }
 }

@@ -37,7 +37,7 @@ class AntrianController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode_antrian' => 'required|string|max:20|unique:antrian,kode_antrian',
+           // 'kode_antrian' => 'required|string|max:20|unique:antrian,kode_antrian',
             'pasien_id' => 'required|exists:pasien,id',
             'dokter_id' => 'required|exists:dokter,id',
             'jadwal_id' => 'required|exists:jadwal,id',
@@ -45,8 +45,16 @@ class AntrianController extends Controller
             'waktu_daftar' => 'required|date_format:Y-m-d H:i:s'
         ]);
 
+        // Buat kode antrian otomatis
+        $today = date('Y-m-d');
+        $jumlahAntrianHariIni = Antrian::where('dokter_id', $request->dokter_id)
+            ->whereDate('waktu_daftar', $today)
+            ->count();
+        $nomorUrut = $jumlahAntrianHariIni + 1;
+        $kodeAntrian = 'A' . str_pad($nomorUrut, 3, '0', STR_PAD_LEFT);
+
         Antrian::create([
-            'kode_antrian' => $request->kode_antrian,
+            'kode_antrian' => $kodeAntrian,
             'pasien_id' => $request->pasien_id,
             'dokter_id' => $request->dokter_id,
             'jadwal_id' => $request->jadwal_id,
@@ -90,7 +98,7 @@ class AntrianController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'kode_antrian' => 'required|string|max:20|unique:antrian,kode_antrian',
+            'kode_antrian' => 'required|string|max:20|unique:antrian,kode_antrian,' .$id,
             'pasien_id' => 'required|exists:pasien,id',
             'dokter_id' => 'required|exists:dokter,id',
             'jadwal_id' => 'required|exists:jadwal,id',
@@ -102,7 +110,7 @@ class AntrianController extends Controller
 
 
          $updatedata->update([
-            'kode_antrian' => $request->kode_antrian,
+            //'kode_antrian' => $request->kode_antrian,
             'pasien_id' => $request->pasien_id,
             'dokter_id' => $request->dokter_id,
             'jadwal_id' => $request->jadwal_id,

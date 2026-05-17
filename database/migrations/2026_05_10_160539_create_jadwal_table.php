@@ -15,7 +15,7 @@ class CreateJadwalTable extends Migration
     {
         Schema::create('jadwal', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('dokter_id')->refrences('dokter_id')->on('dokter');
+            $table->foreignId('dokter_id')->references('id')->on('dokter');
             $table->enum('hari', ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']);
             $table->time('jam_mulai');
             $table->time('jam_selesai');

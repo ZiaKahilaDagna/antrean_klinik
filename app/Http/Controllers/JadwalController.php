@@ -75,6 +75,7 @@ class JadwalController extends Controller
     public function edit($id)
     {
         $dataeditjadwal = Jadwal::find($id);
+        $dokter = Dokter::all();
         return view('jadwal.edit', compact('dataeditjadwal'));
     }
 

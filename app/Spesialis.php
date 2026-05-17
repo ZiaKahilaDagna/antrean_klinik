@@ -10,8 +10,8 @@ class spesialis extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['name'];
 
-    public function spesialis()
+    public function dokter()
     {
-        return $this->hasMany(Spesialis::class, 'id');
+        return $this->hasMany(Dokter::class, 'spesialis_id');
     }
 }

@@ -40,7 +40,7 @@ class DokterController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'spesialis_id' => 'required|string',
+            'spesialis_id' => 'required|exists:spesialis,id',
              'no_hp' => 'required|string|max:15',
         ]);
 
@@ -73,6 +73,7 @@ class DokterController extends Controller
     public function edit($id)
     {
         $dataeditdokter = Dokter::find($id);
+        $spesialis = Spesialis::all();
         return view('dokter.edit', compact('dataeditdokter'));
     }
 
@@ -87,7 +88,7 @@ class DokterController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'spesialis_id' => 'required|string',
+            'spesialis_id' => 'required|exists:spesialis,id',
             'no_hp' => 'required|string|max:15'
         ]);
 

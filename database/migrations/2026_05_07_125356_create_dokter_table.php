@@ -16,7 +16,7 @@ class CreateDokterTable extends Migration
         Schema::create('dokter', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->foreignId('spesialis_id')->refrences('spesialis_id')->on('spesialis');
+            $table->foreignId('spesialis_id')->references('id')->on('spesialis');
             $table->string('no_hp');
             $table->timestamps();
         });

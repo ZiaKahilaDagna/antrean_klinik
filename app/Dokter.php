@@ -10,8 +10,18 @@ class Dokter extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'spesialis_id', 'no_hp'];
 
-    public function dokter()
+    public function spesialis()
     {
-        return $this->hasMany(Dokter::class, 'id');
+        return $this->belongsTo(Spesialis::class, 'spesialis_id');
+    }
+
+    public function jadwal()
+    {
+        return $this->hasMany(Jadwal::class, 'dokter_id');
+    }
+
+    public function antrian()
+    {
+        return $this->hasMany(Antrian::class, 'dokter_id');
     }
 }

@@ -16,9 +16,9 @@ class CreateAntrianTable extends Migration
         Schema::create('antrian', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('kode_antrian', 20)->unique();
-            $table->foreignId('pasien_id')->refrences('pasien_id')->on('pasien');
-            $table->foreignId('dokter_id')->refrences('dokter_id')->on('dokter');
-            $table->foreignId('jadwal_id')->refrences('jadwal_id')->on('jadwal');
+            $table->foreignId('pasien_id')->references('id')->on('pasien');
+            $table->foreignId('dokter_id')->references('id')->on('dokter');
+            $table->foreignId('jadwal_id')->references('id')->on('jadwal');
             $table->text('keluhan')->nullable();
             $table->enum('status', ['menunggu', 'dipanggil;', 'selesai', 'batal'])->default('menunggu');
             $table->datetime('waktu_daftar');
