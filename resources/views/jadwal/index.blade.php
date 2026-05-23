@@ -16,8 +16,7 @@
         @foreach ($jadwal as $v)
         <tr>
             <td>{{ $loop->iteration }}</td>
-            <td>{{ $v->name }}</td>
-            <td>{{ $v->dokter_id }}</td>
+            <td>{{ $v->dokter->name ?? '-' }}</td>
             <td>{{ $v->hari }}</td>
             <td>{{ $v->jam_mulai }}</td>
             <td>{{ $v->jam_selesai }}</td>

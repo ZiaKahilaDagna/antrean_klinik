@@ -1,8 +1,8 @@
-<h3>halaman edit spesialis</h3>
+<h3>Halaman Edit Spesialis</h3>
 <form action="{{ route('spesialis.update', $dataeditspesialis->id) }}" method="POST">
     {{ csrf_field() }}
     @method('PUT')
-    <label>Nama:</label>
+    <label>Nama</label>
     <input type="text" name="name" value="{{$dataeditspesialis->name}}" required>
     <br>
     <button type="submit">Update</button>

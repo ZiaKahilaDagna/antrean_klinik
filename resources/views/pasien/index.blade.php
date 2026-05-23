@@ -21,7 +21,9 @@
             <td>{{ $v->address }}</td>
             <td>{{ $v->email }}</td>
             <td>{{ $v->no_hp }}</td>
-            <td>{{ $v->jenis_kelamin }}</td>
+            <td>
+                {{ $v->jenis_kelamin == 'L' ? 'Laki-laki' : ($v->jenis_kelamin == 'P' ? 'Perempuan' : '-') }}
+            </td>
             <td>
                 <form action="{{ route('pasien.destroy', $v->id) }}" method="POST" style="display:inline">
                     {{ csrf_field() }}
@@ -35,4 +37,4 @@
         </tr>
         @endforeach
     </tbody>
-</table>                                                                         
+</table>

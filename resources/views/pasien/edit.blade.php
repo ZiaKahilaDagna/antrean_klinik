@@ -1,4 +1,4 @@
-<h3>halaman edit pasien\</h3>
+<h3>halaman edit pasien</h3>
 <form action="{{ route('pasien.update', $dataeditpasien->id) }}" method="POST">
     {{ csrf_field() }}
     @method('PUT')
@@ -16,9 +16,9 @@
     <br>
     <label>Jenis Kelamin:</label>
     <select name="jenis_kelamin" required>
-    <option value="">Pilih Jenis Kelamin</option>
-    <option value="L">Laki-laki</option>
-    <option value="P">Perempuan</option>
+        <option value="">Pilih Jenis Kelamin</option>
+        <option value="L" {{ $dataeditpasien->jenis_kelamin == 'L' ? 'selected' : '' }}>Laki-laki</option>
+        <option value="P" {{ $dataeditpasien->jenis_kelamin == 'P' ? 'selected' : '' }}>Perempuan</option>
     </select>
     <br>
     <button type="submit">Update</button>

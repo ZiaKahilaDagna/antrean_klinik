@@ -1,4 +1,4 @@
-<h3>halaman index</h3>
+<h3>Halaman Index Dokter</h3>
 <table border="1">
     <thead>
         <tr>
@@ -16,8 +16,8 @@
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $v->name }}</td>
-            <td>{{ $v->spesialis_id}}</td>
-            <td>{{ $v->no_hp}}</td>
+            <td>{{ $v->spesialis->name ?? '-' }}</td>
+            <td>{{ $v->no_hp }}</td>
             <td>
                 <form action="{{ route('dokter.destroy', $v->id) }}" method="POST" style="display:inline">
                     {{ csrf_field() }}

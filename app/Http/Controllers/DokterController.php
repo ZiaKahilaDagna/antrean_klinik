@@ -15,7 +15,7 @@ class DokterController extends Controller
      */
     public function index()
     {
-        $dokter = Dokter::all();
+        $dokter = Dokter::with('spesialis')->get();
         return view('dokter.index', compact('dokter'));
     }
 
@@ -74,7 +74,7 @@ class DokterController extends Controller
     {
         $dataeditdokter = Dokter::find($id);
         $spesialis = Spesialis::all();
-        return view('dokter.edit', compact('dataeditdokter'));
+        return view('dokter.edit', compact('dataeditdokter', 'spesialis'));
     }
 
     /**
