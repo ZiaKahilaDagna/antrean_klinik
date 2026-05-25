@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Antrian;
+use App\Pasien;  
+use App\Dokter;  
+use App\Jadwal; 
 
 class AntrianController extends Controller
 {
@@ -14,7 +17,7 @@ class AntrianController extends Controller
      */
     public function index()
     {
-        $antrian = Antrian::all();
+        $antrian = Antrian::with('dokter', 'pasien', 'jadwal')->get();
         return view('antrian.index', compact('antrian'));
     }
 
@@ -25,7 +28,11 @@ class AntrianController extends Controller
      */
     public function create()
     {
-        return view ('antrian.create');
+        $pasien = Pasien::all();    
+        $dokter = Dokter::all();     
+        $jadwal = Jadwal::all();     
+        
+        return view('antrian.create', compact('pasien', 'dokter', 'jadwal'));
     }
 
     /**
@@ -85,7 +92,12 @@ class AntrianController extends Controller
     public function edit($id)
     {
         $dataeditantrian = Antrian::find($id);
-        return view('antrian.edit', compact('dataeditantrian'));
+        $dokter = Dokter::all();      
+        $pasien = Pasien::all();      
+        $jadwal = Jadwal::all();
+    
+        return view('antrian.edit', compact('dataeditantrian', 'dokter', 'pasien', 'jadwal'));
+
     }
 
     /**
