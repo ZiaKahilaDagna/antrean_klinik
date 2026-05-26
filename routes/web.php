@@ -56,3 +56,4 @@ Route::post('/antrian', [AntrianController::class, 'store'])->name('antrian.stor
 Route::get('/antrian/{id}/edit', [AntrianController::class, 'edit'])->name('antrian.edit');
 Route::put('/antrian/{id}', [AntrianController::class, 'update'])->name('antrian.update');
 Route::delete('/antrian/{id}', [AntrianController::class, 'destroy'])->name('antrian.destroy');
+Route::put('/antrian/panggil/{id}', [AntrianController::class, 'panggil'])->name('antrian.panggil'); 

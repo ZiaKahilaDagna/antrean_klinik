@@ -6,17 +6,24 @@
             <div class="card-header bg-primary text-white">
                 <h3>Halaman Create Spesialis</h3>
             </div>
-            <div class="card-body table-responsive">
-                <table class="table table-striped table-hover">
-            <form action="{{ route('spesialis.store') }}" method="POST">
-                {{ csrf_field() }}
-                <label>Nama</label>
-                <input type="text" name="name" required>
-                <br>
-                <button type="submit">Save</button>
-            </form>
+            <div class="card-body">
+                <form action="{{ route('spesialis.store') }}" method="POST">
+                    {{ csrf_field() }}
+                    
+                    <div class="form-group">
+                        <label>Nama Spesialis</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                    <a href="{{ route('spesialis.index') }}" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Batal
+                    </a>
+                </form>
             </div>
         </div>
     </div>
 </div> 
-@endsection 
+@endsection

@@ -6,27 +6,39 @@
             <div class="card-header bg-primary text-white">
                 <h3>Halaman Create Dokter</h3>
             </div>
-            <div class="card-body table-responsive">
-                <table class="table table-striped table-hover">
-            <form action="{{ route('dokter.store') }}" method="POST">
-                {{ csrf_field() }}
-                <label>Nama</label>
-                <input type="text" name="name" required>
-                <br>
-                <label>Spesialis</label>
-                <select name="spesialis_id">
-                    <option value="">-- Pilih Spesialis --</option>
-                    @foreach ($spesialis as $spesialis)
-                    <option value="{{ $spesialis->id }}">
-                        {{ $spesialis->name }}
-                    </option>
-                    @endforeach
-                </select>
-                <br>
-                <label>Nomor telp</label>
-                <input type="text" name="no_hp" required>
-                <button type="submit">Save</button>
-            </form>
+            <div class="card-body">
+                <form action="{{ route('dokter.store') }}" method="POST">
+                    {{ csrf_field() }}
+                    
+                    <div class="form-group">
+                        <label>Nama Dokter</label>
+                        <input type="text" name="name" class="form-control" placeholder="Contoh: dr. Andi Wijaya" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Spesialis</label>
+                        <select name="spesialis_id" class="form-control" required>
+                            <option value="">-- Pilih Spesialis --</option>
+                            @foreach ($spesialis as $spesialis)
+                                <option value="{{ $spesialis->id }}">
+                                    {{ $spesialis->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nomor Telepon</label>
+                        <input type="text" name="no_hp" class="form-control" placeholder="Contoh: 08123456789" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                    <a href="{{ route('dokter.index') }}" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Batal
+                    </a>
+                </form>
             </div>
         </div>
     </div>

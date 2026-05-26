@@ -49,7 +49,7 @@ class AntrianController extends Controller
             'dokter_id' => 'required|exists:dokter,id',
             'jadwal_id' => 'required|exists:jadwal,id',
             'keluhan' => 'nullable|string',
-            'waktu_daftar' => 'required|date_format:Y-m-d H:i:s'
+            //'waktu_daftar' => 'required|date_format:Y-m-d H:i:s'
         ]);
 
         // Buat kode antrian otomatis
@@ -66,7 +66,7 @@ class AntrianController extends Controller
             'dokter_id' => $request->dokter_id,
             'jadwal_id' => $request->jadwal_id,
             'keluhan' => $request->keluhan,
-            'waktu_daftar' => $request->waktu_daftar,
+            'waktu_daftar' => now(),
         ]);
 
         return redirect()->route('antrian.index');
@@ -110,12 +110,13 @@ class AntrianController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'kode_antrian' => 'required|string|max:20|unique:antrian,kode_antrian,' .$id,
+            //'kode_antrian' => 'required|string|max:20|unique:antrian,kode_antrian,' .$id,
             'pasien_id' => 'required|exists:pasien,id',
             'dokter_id' => 'required|exists:dokter,id',
             'jadwal_id' => 'required|exists:jadwal,id',
             'keluhan' => 'nullable|string',
-            'waktu_daftar' => 'required|date_format:Y-m-d H:i:s'
+            'status' => 'required|in:menunggu,dipanggil,selesai,batal',
+            //'waktu_daftar' => 'required|date_format:Y-m-d H:i:s'
         ]);
 
         $updatedata = Antrian::findOrFail($id);
@@ -127,7 +128,8 @@ class AntrianController extends Controller
             'dokter_id' => $request->dokter_id,
             'jadwal_id' => $request->jadwal_id,
             'keluhan' => $request->keluhan,
-            'waktu_daftar' => $request->waktu_daftar,
+            'status' => $request->status,
+            //'waktu_daftar' => $request->waktu_daftar,
          ]);
 
         return redirect()->route('antrian.index');
@@ -143,5 +145,15 @@ class AntrianController extends Controller
     {
         Antrian::where('id', $id)->delete();
         return redirect()->route('antrian.index');
+    }
+
+    public function panggil($id)
+    {
+        $antrian = Antrian::findOrFail($id);
+        $antrian->status = 'dipanggil;';
+        $antrian->waktu_panggil = now();
+        $antrian->save();
+
+        return redirect()->route('antrian.index')->with('success', 'Pasien berhasil dipanggil!');
     }
 }
