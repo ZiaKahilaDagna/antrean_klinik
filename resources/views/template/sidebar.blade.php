@@ -1,16 +1,12 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('antrian.index') }}" class="brand-link">
+    <a href="{{ route('admin.dashboard') }}" class="brand-link">
         <i class="fas fa-hospital-user fa-lg" style="color: #ffffff;"></i>
         <span class="brand-text font-weight-light" style="margin-left: 8px;">Antrian Klinik</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-        
-
-        
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -24,31 +20,31 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('spesialis.index') }}" class="nav-link {{ request()->routeIs('spesialis.*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.spesialis.index') }}" class="nav-link {{ request()->routeIs('admin.spesialis.*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-stethoscope"></i>
                                 <p>Spesialis</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('dokter.index') }}" class="nav-link {{ request()->routeIs('dokter.*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.dokter.index') }}" class="nav-link {{ request()->routeIs('admin.dokter.*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-user-md"></i>
                                 <p>Dokter</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('pasien.index') }}" class="nav-link {{ request()->routeIs('pasien.*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.pasien.index') }}" class="nav-link {{ request()->routeIs('admin.pasien.*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Pasien</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('jadwal.index') }}" class="nav-link {{ request()->routeIs('jadwal.*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.jadwal.index') }}" class="nav-link {{ request()->routeIs('admin.jadwal.*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>Jadwal</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('antrian.index') }}" class="nav-link {{ request()->routeIs('antrian.*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.antrian.index') }}" class="nav-link {{ request()->routeIs('admin.antrian.*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-clock"></i>
                                 <p>Antrian</p>
                             </a>
