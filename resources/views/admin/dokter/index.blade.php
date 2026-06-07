@@ -16,7 +16,7 @@
                             <th>Nomor Telp</th>
                             <th>
                                 <a href="{{ route('admin.dokter.create') }}" class="btn btn-success btn-sm">
-                                    + Create Dokter
+                                    + Tambah Dokter
                                 </a>
                             </th>
                         </tr>
@@ -34,11 +34,11 @@
                                     @method('DELETE')
                                     
                                     <a href="{{ route('admin.dokter.edit', $v->id) }}" class="btn btn-warning btn-sm">
-                                        Edit
+                                        Ubah
                                     </a>
                                     
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus dokter {{ $v->name }}?')">
-                                        Delete
+                                        Hapus
                                     </button>
                                 </form>
                             </td>

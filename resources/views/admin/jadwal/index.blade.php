@@ -17,7 +17,7 @@
                             <th>Jam Selesai</th>
                             <th>
                                 <a href="{{ route('admin.jadwal.create') }}" class="btn btn-success btn-sm">
-                                    + Create Jadwal
+                                    + Tambah Jadwal
                                 </a>
                             </th>
                         </tr>
@@ -36,11 +36,11 @@
                                     @method('DELETE')
                                     
                                     <a href="{{ route('admin.jadwal.edit', $v->id) }}" class="btn btn-warning btn-sm">
-                                        Edit
+                                        Ubah
                                     </a>
                                     
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus jadwal dokter {{ $v->dokter->name ?? 'ini' }}?')">
-                                        Delete
+                                        Hapus
                                     </button>
                                 </form>
                             </td>

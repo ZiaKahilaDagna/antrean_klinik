@@ -33,7 +33,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Save
+                        <i class="fas fa-save"></i> Simpan
                     </button>
                     <a href="{{ route('admin.dokter.index') }}" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Batal

@@ -85,7 +85,7 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">Perbarui</button>
                     <a href="{{ route('admin.antrian.index') }}" class="btn btn-secondary">Batal</a>
                 </form>
             </div>

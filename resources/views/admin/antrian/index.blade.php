@@ -21,7 +21,7 @@
                             <th>Waktu Panggil</th>
                             <th>
                                 <a href="{{ route('admin.antrian.create') }}" class="btn btn-sm btn-success">
-                                    + Create Antrian
+                                    + Tambah Antrian
                                 </a>
                             </th>
                         </tr>
@@ -69,7 +69,7 @@
 
                                 {{-- TOMBOL EDIT --}}
                                 <a href="{{ route('admin.antrian.edit', $v->id) }}" class="btn btn-sm btn-warning">
-                                    Edit
+                                    Ubah
                                 </a>
 
                                 {{-- TOMBOL DELETE --}}
@@ -77,7 +77,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this antrian?')">
-                                        Delete
+                                        Hapus
                                     </button>
                                 </form>
                             </td>

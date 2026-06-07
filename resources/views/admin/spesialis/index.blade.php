@@ -14,7 +14,7 @@
                             <th>Nama</th>
                             <th>
                                 <a href="{{ route('admin.spesialis.create') }}" class="btn btn-success btn-sm">
-                                    + Create Spesialis
+                                    + Tambah Spesialis
                                 </a>
                             </th>
                         </tr>
@@ -30,11 +30,11 @@
                                     @method('DELETE')
                                     
                                     <a href="{{ route('admin.spesialis.edit', $v->id) }}" class="btn btn-warning btn-sm">
-                                        Edit
+                                        Ubah
                                     </a>
                                     
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this spesialis?')">
-                                        Delete
+                                        Hapus
                                     </button>
                                 </form>
                             </td>

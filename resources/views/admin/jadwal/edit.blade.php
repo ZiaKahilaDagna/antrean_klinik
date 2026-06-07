@@ -46,7 +46,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Update
+                        <i class="fas fa-save"></i> Ubah
                     </button>
                     <a href="{{ route('admin.jadwal.index') }}" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Batal

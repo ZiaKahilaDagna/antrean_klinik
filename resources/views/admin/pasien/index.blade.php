@@ -18,7 +18,7 @@
                             <th>Jenis Kelamin</th>
                             <th>
                                 <a href="{{ route('admin.pasien.create') }}" class="btn btn-success btn-sm">
-                                    + Create Pasien
+                                    + Tambah Pasien
                                 </a>
                             </th>
                         </tr>
@@ -46,11 +46,11 @@
                                     @method('DELETE')
                                     
                                     <a href="{{ route('admin.pasien.edit', $v->id) }}" class="btn btn-warning btn-sm">
-                                        Edit
+                                        Ubah
                                     </a>
                                     
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus pasien {{ $v->name }}?')">
-                                        Delete
+                                        Hapus
                                     </button>
                                 </form>
                             </td>
