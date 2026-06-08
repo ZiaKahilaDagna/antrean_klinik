@@ -17,7 +17,7 @@ class AntrianController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
         
-        return view('dokters.antrian.index', compact('antrian'));  // ← BENAR
+        return view('dokter.antrian.index', compact('antrian'));  // ← BENAR
     }
 
     public function show($id)
@@ -28,7 +28,7 @@ class AntrianController extends Controller
             ->where('dokter_id', $dokterId)
             ->findOrFail($id);
         
-        return view('dokters.antrian.show', compact('antrian'));  // ← BENAR
+        return view('dokter.antrian.show', compact('antrian'));  // ← BENAR
     }
 
     public function panggil($id)

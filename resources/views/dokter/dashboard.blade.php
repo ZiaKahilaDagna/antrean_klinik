@@ -1,4 +1,4 @@
-@extends('template/layout')
+@extends('dokter.template.layout')
 @section('content')
 
 <div class="row">
@@ -8,7 +8,7 @@
                 <h3><i class="fas fa-tachometer-alt"></i> Dashboard Dokter</h3>
             </div>
             <div class="card-body">
-                <p>Selamat datang, <strong>{{ auth()->user()->name }}</strong>! Anda login sebagai <span class="badge badge-success">Dokter</span></p>
+                <p>Selamat datang, <strong>{{ auth()->user()->name }}</strong>! Anda login sebagai <span class="badge badge-success">{{ auth()->user()->role ?? 'Dokter' }}</span></p>
                 <p>Selamat datang di sistem Antrian Klinik.</p>
             </div>
         </div>

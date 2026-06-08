@@ -1,4 +1,4 @@
-@extends('template/layout')
+@extends('dokter/template/layout')
 @section('content')
 
 <div class="row">

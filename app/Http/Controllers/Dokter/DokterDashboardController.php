@@ -29,7 +29,7 @@ class DokterDashboardController extends Controller
         ->where('status', 'selesai')
         ->count();
 
-    return view('dokters.dashboard', compact(  
+    return view('dokter.dashboard', compact(  
         'antrianHariIni',    
         'totalAntrian',      
         'antrianMenunggu',   

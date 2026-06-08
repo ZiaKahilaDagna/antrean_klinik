@@ -20,11 +20,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-  @include('template/navbar')
+  @include('dokter/template/navbar')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  @include('template/sidebar')
+  @include('dokter/template/sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -60,7 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  @include('template/footer')
+  @include('dokter/template/footer')
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
