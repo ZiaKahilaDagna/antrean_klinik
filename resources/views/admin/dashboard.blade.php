@@ -145,7 +145,7 @@
                         </a>
                     </div>
                     <div class="col-md-2 col-6 mb-2">
-                        <a href="#" class="btn btn-outline-danger btn-block">
+                        <a href="{{ route('admin.antrian.create') }}" class="btn btn-outline-danger btn-block">
                             <i class="fas fa-plus"></i> Antrian
                         </a>
                     </div>
