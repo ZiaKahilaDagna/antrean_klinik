@@ -10,10 +10,13 @@ use App\Http\Controllers\Admin\JadwalController;
 use App\Http\Controllers\Admin\AntrianController;
 use App\Http\Controllers\Dokter\AntrianController as DokterAntrianController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\MonitorController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/monitor', [MonitorController::class, 'index'])->name('monitor.index');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);

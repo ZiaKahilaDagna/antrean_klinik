@@ -23,11 +23,7 @@
                     </tr>
                     <tr>
                         <th>Status</th>
-                        <td>
-                            <span class="badge badge-{{ $antrian->status == 'menunggu' ? 'warning' : ($antrian->status == 'dipanggil' ? 'info' : 'success') }}">
-                                {{ $antrian->status }}
-                            </span>
-                        </td>
+                        <td>{{ $antrian->status }}</td>
                     </tr>
                     <tr>
                         <th>Waktu Daftar</th>
@@ -68,7 +64,7 @@
                         </form>
                     @endif
                     
-                    @if($antrian->status == 'dipanggil')
+                    @if($antrian->status == 'dipanggil;')
                         <form action="{{ route('dokter.antrian.selesai', $antrian->id) }}" method="POST" style="display:inline">
                             @csrf
                             @method('PUT')
